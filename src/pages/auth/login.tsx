@@ -4,7 +4,7 @@ import PageLayout from "../../common/layouts/PageLayout";
 import LoginForm from "../../modules/Auth/LoginForm";
 import { storage } from "../../utils/storage";
 
-const login = () => {
+const Login: React.FC = () => {
   const router = useRouter();
 
   useEffect(() => {
@@ -33,4 +33,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;

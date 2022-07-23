@@ -1,16 +1,10 @@
-import { LockClosedIcon } from "@heroicons/react/outline";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
-import LinkedItem from "../../common/components/elements/LinkedItem";
+import React, { useEffect } from "react";
 import PageLayout from "../../common/layouts/PageLayout";
-import axios, { AxiosResponse } from "../../lib/axios";
 import RegisterForm from "../../modules/Auth/RegisterForm";
-import { showErrorAlert } from "../../utils/alert";
 import { storage } from "../../utils/storage";
-import { supabaseClient } from "../../utils/supabaseClient";
-import { showSuccessToast } from "../../utils/toast";
 
-const register = () => {
+const Register: React.FC = () => {
   const router = useRouter();
 
   useEffect(() => {
@@ -39,4 +33,4 @@ const register = () => {
   );
 };
 
-export default register;
+export default Register;
