@@ -28,16 +28,17 @@ export default async function handler(
     });
   }
 
-  if (bcrypt.compareSync(password, data.password)) {
-    return res.status(401).json({
-      error: "Invalid Credentials ",
-      message: "Entered password is wrong",
+  const isCorrectPassword = await bcrypt.compareSync(password, data.password);
+
+  if (isCorrectPassword) {
+    return res.status(200).json({
+      data: { id: data.user_id },
+      error: "",
+      message: "Login successful",
     });
   }
-
-  return res.status(200).json({
-    data: { id: data.user_id },
-    error: "",
-    message: "Login successful",
+  return res.status(401).json({
+    error: "Invalid Credentials ",
+    message: "Entered password is wrong",
   });
 }

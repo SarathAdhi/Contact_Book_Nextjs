@@ -89,14 +89,22 @@ export const SideBar = () => {
 
               <div className="w-64 p-5 bg-white gap-5 flex flex-col items-center fixed inset-y-0 flex-1 rounded-r-xl">
                 <div className="flex gap-2 flex-col items-center">
-                  <h1 className="text-2xl animate-bounce font-bold px-2 py-1 border-2 border-[#ff0062] rounded-lg">
-                    Contact Book
+                  <h1 className="text-2xl animate-pulse font-bold px-2 py-1 border-2 border-[#ff0062] rounded-lg">
+                    SupaBook
                   </h1>
                   <p className="text-center font-semibold">
                     Create and store all your contacts here.
                   </p>
                 </div>
-                <button>Click</button>
+                <button
+                  onClick={() => {
+                    storage.clearToken("token");
+                    router.replace("/auth/login");
+                  }}
+                  className="bg-red-500 text-white font-semibold px-3 py-1 rounded-md duration-300 hover:rounded-xl"
+                >
+                  Logout
+                </button>
               </div>
             </div>
           </Transition.Child>

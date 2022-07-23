@@ -123,7 +123,7 @@ const Home: NextPage = () => {
         setAllContactDetails={setAllContactDetails}
       />
 
-      {allContactDetails.length !== 0 ? (
+      {allContactDetails?.length !== 0 ? (
         <DataTable columns={columns} data={allContactDetails} />
       ) : (
         <h1 className="text-xl font-semibold">No Contacts created yet.</h1>
