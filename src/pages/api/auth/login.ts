@@ -15,6 +15,14 @@ export default async function handler(
 ) {
   const { email, password } = req.body;
 
+  if (req.headers.authorization !== process.env.API_ACCESS_TOKEN) {
+    console.log("not allowed");
+    return res.status(404).json({
+      error: "Your are not authorized. Invalid API access token.",
+      message: "",
+    });
+  }
+
   const { data, error } = await supabaseClient
     .from("users")
     .select("*")

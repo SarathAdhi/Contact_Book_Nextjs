@@ -1,4 +1,4 @@
-import Axios from "axios";
+import Axios, { AxiosRequestConfig } from "axios";
 
 export type AxiosResponse = {
   message: string;
@@ -19,5 +19,10 @@ axios.interceptors.response.use(
     return error.response.data;
   }
 );
+
+axios.interceptors.request.use((req: AxiosRequestConfig) => {
+  req!.headers!.authorization = process.env.API_ACCESS_TOKEN!;
+  return req;
+});
 
 export default axios;
