@@ -89,9 +89,14 @@ export const SideBar = () => {
 
               <div className="w-64 p-5 bg-white gap-5 flex flex-col items-center fixed inset-y-0 flex-1 rounded-r-xl">
                 <div className="flex gap-2 flex-col items-center">
-                  <h1 className="text-2xl animate-pulse font-bold px-2 py-1 border-2 border-[#ff0062] rounded-lg">
-                    SupaBook
-                  </h1>
+                  <div className="flex items-center gap-2 p-2 border-2 border-[#ff0062] rounded-lg">
+                    <img
+                      className="mx-auto h-8 w-auto"
+                      src="/logo.png"
+                      alt="SupaBook"
+                    />
+                    <h1 className="text-2xl font-bold ">SupaBook</h1>
+                  </div>
                   <p className="text-center font-semibold">
                     Create and store all your contacts here.
                   </p>
